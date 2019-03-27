@@ -4,7 +4,7 @@ export * from './updaters';
 const INITIAL_STATE = {count: 0};
 
 export default function component({
-  initialState = INITIAL_STATE,
+  appState = INITIAL_STATE,
   applyUpdate = null
 } = {}) {
 	// Consider this component instance "managed" if `applyUpdate` was passed
@@ -15,7 +15,7 @@ export default function component({
 		// Let parent apply update if managed
 		? applyUpdate(state => update(state))
 		// Apply update locally if not
-		: update(initialState);
+		: update(appState);
 
   return render(state);
 }

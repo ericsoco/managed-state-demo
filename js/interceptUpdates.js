@@ -8,7 +8,7 @@ const applyComponentUpdate = updater => {
 }
 
 const controlledComponent = component({
-	initialState: appState,
+	appState,
 	applyUpdate: applyComponentUpdate
 });
 
